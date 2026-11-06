@@ -36,9 +36,8 @@ using UnityEngine.Assertions;
 		 {
 			 GameObject o = pool[i];
 			 if (ReferenceEquals(o, null) || o.activeSelf) continue;
-			 if (returnToParentToReuse && o.transform.parent.GetEntityId() != this.parent.GetEntityId()) continue;
-
-			 obj = o;
+			if (returnToParentToReuse && o.transform.parent != this.parent) continue;
+			obj = o;
 			 break;
 		 }
 
